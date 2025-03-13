@@ -2,7 +2,7 @@
 
 A responsive Netflix clone built with HTML, CSS, and vanilla JavaScript that accurately mimics the design and functionality of the real Netflix website.
 
-![Netflix Clone Screenshot](images\05cItXL96l4LE9n02WfDR0h-5.webp)
+![Netflix Clone Screenshot](https://t1.gstatic.com/images?q=tbn:ANd9GcTDtWF5XSjCv2sKbO5Aq_L9UjMZ5_EFDrgkOdaMeCxo0eIRi979)
 
 ## Features
 
