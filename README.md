@@ -82,4 +82,4 @@ This project is for educational purposes only. This is not the official Netflix 
 
 ---
 
-Made with ❤️ by [Your Name] 
+Made with ❤️ by [Raushan Dubey] 
