@@ -1,0 +1,1254 @@
+/* Netflix CSS Variables */
+:root {
+    --netflix-red: #E50914;
+    --netflix-dark: #141414;
+    --netflix-dark-lighter: #181818;
+    --netflix-dark-light: #222222;
+    --netflix-gray: #808080;
+    --netflix-light-gray: #b3b3b3;
+    --netflix-white: #FFFFFF;
+    --netflix-shadow: rgba(0, 0, 0, 0.75);
+    --netflix-gradient: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0, rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 0.8) 100%);
+    --hover-transition: all 0.3s ease;
+    --mobile-padding: 10px;
+    --small-mobile-width: 320px;
+    --medium-mobile-width: 375px;
+    --large-mobile-width: 414px;
+    --iphone-pro-max: 428px;
+    --android-large: 480px;
+    --tablet-width: 768px;
+}
+
+/* CSS Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background-color: var(--netflix-dark);
+    color: var(--netflix-white);
+    overflow-x: hidden;
+}
+
+/* Animations */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUp {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+/* Navbar */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 0 4%;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.3s ease;
+    height: 68px;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7) 10%, transparent);
+}
+
+.navbar-black {
+    background-color: var(--netflix-dark);
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    height: 25px;
+    margin-right: 25px;
+}
+
+.nav-links {
+    display: flex;
+}
+
+.nav-link {
+    color: var(--netflix-light-gray);
+    text-decoration: none;
+    margin-right: 20px;
+    font-size: 14px;
+    font-weight: 400;
+    transition: color 0.3s ease;
+}
+
+.nav-link.active {
+    color: var(--netflix-white);
+    font-weight: 500;
+}
+
+.nav-link:hover {
+    color: var(--netflix-white);
+}
+
+.nav-options {
+    display: flex;
+    align-items: center;
+}
+
+.nav-option {
+    background: transparent;
+    border: none;
+    color: var(--netflix-white);
+    font-size: 18px;
+    margin-left: 22px;
+    cursor: pointer;
+}
+
+.nav-profile {
+    display: flex;
+    align-items: center;
+    margin-left: 22px;
+    cursor: pointer;
+}
+
+.nav-profile-img {
+    height: 32px;
+    width: 32px;
+    border-radius: 4px;
+}
+
+.nav-profile i {
+    margin-left: 10px;
+    font-size: 12px;
+    transition: transform 0.3s ease;
+}
+
+.nav-profile:hover i {
+    transform: rotate(180deg);
+}
+
+.profile-dropdown {
+    position: absolute;
+    display: none;
+    right: 0;
+    top: 60px;
+    background-color: rgba(0, 0, 0, 0.9);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 4px;
+    padding: 10px 0;
+    min-width: 200px;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    z-index: 1001;
+}
+
+.profile-dropdown-item {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    color: var(--netflix-white);
+    text-decoration: none;
+    font-size: 13px;
+}
+
+.profile-dropdown-item:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.profile-dropdown-img {
+    height: 32px;
+    width: 32px;
+    border-radius: 4px;
+    margin-right: 10px;
+}
+
+.profile-dropdown-item i {
+    margin-right: 10px;
+    width: 16px;
+    text-align: center;
+}
+
+.profile-dropdown-divider {
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.15);
+    margin: 10px 0;
+}
+
+/* Mobile Menu */
+.mobile-menu-btn {
+    display: none;
+    color: var(--netflix-white);
+    background: transparent;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.mobile-menu {
+    display: none;
+    position: fixed;
+    top: 68px;
+    left: 0;
+    width: 100%;
+    background-color: var(--netflix-dark);
+    flex-direction: column;
+    padding: 20px 0;
+    z-index: 999;
+    transform: translateY(-100%);
+    transition: transform 0.3s ease;
+}
+
+.show-mobile-menu {
+    transform: translateY(0);
+}
+
+.mobile-link {
+    color: var(--netflix-light-gray);
+    text-decoration: none;
+    padding: 12px 4%;
+    font-size: 16px;
+    font-weight: 400;
+    transition: background-color 0.3s ease;
+}
+
+.mobile-link:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--netflix-white);
+}
+
+.mobile-options {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px 4%;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    margin-top: 10px;
+}
+
+.mobile-option {
+    background: transparent;
+    border: none;
+    color: var(--netflix-white);
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* Banner */
+.banner {
+    position: relative;
+    color: var(--netflix-white);
+    height: 80vh;
+    min-height: 500px;
+    max-height: 700px;
+    background-size: cover;
+    background-position: center 20%;
+    padding-top: 68px;
+    margin-bottom: 20px;
+    transition: background-image 0.3s ease;
+}
+
+/* Banner fallback styling for when image fails to load */
+.banner[data-fallback-loaded="true"] {
+    background-image: linear-gradient(77deg, rgba(0,0,0,0.8) 0%, rgba(20,20,20,0.8) 100%) !important;
+    position: relative;
+}
+
+.banner[data-fallback-loaded="true"]::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('images/banner-placeholder.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    opacity: 0.2;
+    z-index: -1;
+}
+
+.banner-contents {
+    padding: 0 4%;
+    margin-top: auto;
+    max-width: 40%;
+    position: absolute;
+    bottom: 35%;
+    animation: fadeIn 1.5s ease-in;
+}
+
+.banner-classification {
+    display: inline-block;
+    background-color: rgba(51, 51, 51, 0.6);
+    color: var(--netflix-white);
+    padding: 2px 8px;
+    border-radius: 3px;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.banner-title {
+    font-size: 3rem;
+    font-family: 'Bebas Neue', sans-serif;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.banner-info {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 15px;
+}
+
+.banner-match {
+    color: #46d369;
+    font-weight: 500;
+    margin-right: 15px;
+}
+
+.banner-year, .banner-seasons, .banner-resolution {
+    margin-right: 15px;
+    font-weight: 500;
+}
+
+.banner-description {
+    line-height: 1.5;
+    font-size: 1.1rem;
+    font-weight: 400;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+    margin-bottom: 20px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+
+.banner-buttons {
+    display: flex;
+}
+
+.banner-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    border-radius: 4px;
+    padding: 8px 25px;
+    margin-right: 15px;
+    cursor: pointer;
+    font-size: 16px;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.play-button {
+    background-color: var(--netflix-white);
+    color: var(--netflix-dark);
+}
+
+.play-button:hover {
+    background-color: rgba(255, 255, 255, 0.75);
+}
+
+.more-info-button {
+    background-color: rgba(109, 109, 110, 0.7);
+    color: var(--netflix-white);
+}
+
+.more-info-button:hover {
+    background-color: rgba(109, 109, 110, 0.5);
+}
+
+.banner-button i {
+    margin-right: 10px;
+}
+
+.banner-fadebottom {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 40%;
+    background-image: linear-gradient(to bottom, transparent, rgba(20, 20, 20, 1));
+}
+
+/* Content Rows */
+.rows-container {
+    margin-top: -100px;
+    position: relative;
+    z-index: 2;
+}
+
+.row {
+    position: relative;
+    margin: 20px 0 30px;
+    padding: 0 4%;
+}
+
+.row-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: #e5e5e5;
+}
+
+.row-posters {
+    display: flex;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    padding: 20px 0;
+    scroll-behavior: smooth;
+    -ms-overflow-style: none;  /* Hide scrollbar IE and Edge */
+    scrollbar-width: none;  /* Hide scrollbar Firefox */
+    position: relative;
+}
+
+.row-posters::-webkit-scrollbar {
+    display: none; /* Hide scrollbar Chrome, Safari, Opera */
+}
+
+.row-poster-container {
+    position: relative;
+    min-width: 180px;
+    margin-right: 10px;
+    border-radius: 4px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.45s ease, box-shadow 0.45s ease;
+    will-change: transform;
+    z-index: 1;
+}
+
+.row-poster-container:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.8);
+    z-index: 2;
+}
+
+.poster-container-hover {
+    transform: scale(1.4);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.9);
+    z-index: 10;
+}
+
+/* Row poster fallback styling */
+.row-poster[data-fallback-loaded="true"] {
+    background-color: var(--netflix-dark-lighter);
+    border: 1px solid var(--netflix-dark-light);
+}
+
+/* Image loading transition effects */
+.row-poster {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 4px;
+    transition: transform 0.3s ease, filter 0.3s ease, opacity 0.3s ease;
+    opacity: 0;
+}
+
+.row-poster.loaded, .row-poster[data-fallback-loaded="true"] {
+    opacity: 1;
+}
+
+.top-ten-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 3px 6px;
+    border-radius: 3px;
+    font-size: 11px;
+    font-weight: 700;
+    z-index: 3;
+}
+
+.row-poster-info {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 10px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, transparent 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.row-poster-container:hover .row-poster-info {
+    opacity: 1;
+}
+
+.row-poster-title {
+    font-weight: 500;
+    font-size: 14px;
+    margin-bottom: 4px;
+}
+
+.row-poster-match {
+    color: #46d369;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.row-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 5;
+    opacity: 0;
+    transition: opacity 0.3s ease, background-color 0.3s ease;
+}
+
+.row:hover .row-arrow {
+    opacity: 1;
+}
+
+.left-arrow {
+    left: 0;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
+.right-arrow {
+    right: 0;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+}
+
+.row-arrow:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* Hover Preview */
+.hover-preview {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--netflix-dark-lighter);
+    border-radius: 4px;
+    z-index: 3;
+    overflow: hidden;
+    opacity: 0;
+    transform: scale(0.9);
+    transition: all 0.3s ease;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+}
+
+.hover-preview-active {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.video-placeholder {
+    width: 100%;
+    height: 70%;
+    background-color: var(--netflix-dark);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.netflix-animation {
+    width: 50px;
+    height: 50px;
+    background-color: var(--netflix-red);
+    animation: pulse 1.5s infinite;
+}
+
+.preview-quick-controls {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.preview-quick-button {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: rgba(42, 42, 42, 0.6);
+    border: 2px solid rgba(255, 255, 255, 0.7);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 14px;
+    transition: transform 0.2s ease;
+}
+
+.preview-quick-button:hover {
+    transform: scale(1.1);
+    border-color: white;
+}
+
+.hover-preview-info {
+    padding: 10px;
+}
+
+.hover-title {
+    font-weight: 700;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.hover-match {
+    color: #46d369;
+    font-size: 13px;
+}
+
+/* Movie Preview Modal */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1001;
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.movie-preview {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.8);
+    width: 90%;
+    max-width: 850px;
+    height: auto;
+    max-height: 90vh;
+    background-color: var(--netflix-dark-lighter);
+    border-radius: 6px;
+    overflow: hidden;
+    z-index: 1002;
+    display: none;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.preview-header {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    background: url('https://occ-0-2773-784.1.nflxso.net/dnm/api/v6/6AYY37jfdO6hpXcMjf9Yu5cnmO0/AAAABer7SeWc6VMkPp45mckbQI9nn4uEHkwEQYkZeV7TDuiKOALnNvXOxmKa6qfUOgYgeqeWKt9aUj0QAJz-qxQYs9WA5MVR1JGAMQDy.jpg?r=608') center/cover no-repeat;
+}
+
+.preview-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: var(--netflix-dark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: white;
+    font-size: 18px;
+    z-index: 3;
+}
+
+.preview-content {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 20px;
+    background: linear-gradient(to top, rgb(20, 20, 20) 0%, rgba(20, 20, 20, 0.7) 50%, transparent 100%);
+}
+
+.preview-title {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.preview-info {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+}
+
+.preview-match, .preview-year, .preview-duration, .preview-rating {
+    margin-right: 15px;
+    margin-bottom: 10px;
+}
+
+.preview-match {
+    color: #46d369;
+}
+
+.preview-description {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    max-width: 80%;
+}
+
+.preview-buttons {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.preview-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 22px;
+    margin-right: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 16px;
+    border: none;
+    transition: all 0.2s ease;
+}
+
+.preview-play {
+    background-color: white;
+    color: black;
+}
+
+.preview-play:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.preview-add, .preview-like {
+    background-color: rgba(133, 133, 133, 0.6);
+    color: white;
+}
+
+.preview-add:hover, .preview-like:hover {
+    background-color: rgba(133, 133, 133, 0.4);
+}
+
+.preview-button i {
+    margin-right: 8px;
+}
+
+.preview-like i {
+    margin-right: 0;
+}
+
+.preview-body {
+    padding: 20px;
+    background-color: var(--netflix-dark-lighter);
+}
+
+.preview-cast, .preview-genres {
+    margin-bottom: 20px;
+}
+
+.preview-cast-title, .preview-genres-title {
+    color: var(--netflix-light-gray);
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.preview-cast-list {
+    color: white;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.preview-genres-list {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.preview-genre {
+    font-size: 14px;
+    background-color: rgba(51, 51, 51, 0.6);
+    padding: 4px 10px;
+    border-radius: 15px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+/* Footer */
+.footer {
+    padding: 30px 4%;
+    margin-top: 40px;
+    color: var(--netflix-gray);
+    font-size: 13px;
+}
+
+.footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1000px;
+    margin-bottom: 20px;
+}
+
+.footer-link {
+    width: 25%;
+    margin-bottom: 15px;
+    color: var(--netflix-gray);
+    text-decoration: none;
+}
+
+.footer-link:hover {
+    text-decoration: underline;
+}
+
+.footer-copyright {
+    margin-top: 20px;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 1200px) {
+    .banner-contents {
+        max-width: 50%;
+        bottom: 30%;
+    }
+    
+    .banner-title {
+        font-size: 2.5rem;
+    }
+    
+    .row-poster-container {
+        min-width: 160px;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .banner-contents {
+        max-width: 60%;
+        bottom: 25%;
+    }
+    
+    .banner-title {
+        font-size: 2.2rem;
+    }
+    
+    .nav-links {
+        display: none;
+    }
+    
+    .mobile-menu-btn {
+        display: block;
+    }
+    
+    .mobile-menu {
+        display: flex;
+    }
+    
+    .row-poster-container {
+        min-width: 140px;
+    }
+    
+    .footer-link {
+        width: 33.33%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .banner {
+        height: 60vh;
+        min-height: 400px;
+    }
+    
+    .banner-contents {
+        max-width: 80%;
+        bottom: 20%;
+    }
+    
+    .banner-title {
+        font-size: 2rem;
+    }
+    
+    .banner-description {
+        font-size: 1rem;
+        -webkit-line-clamp: 2;
+    }
+    
+    .row-poster-container {
+        min-width: 120px;
+    }
+    
+    .preview-description {
+        max-width: 100%;
+    }
+    
+    .footer-link {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .banner {
+        height: 50vh;
+        min-height: 300px;
+    }
+    
+    .banner-contents {
+        max-width: 90%;
+        bottom: 15%;
+    }
+    
+    .banner-title {
+        font-size: 1.7rem;
+    }
+    
+    .banner-description {
+        -webkit-line-clamp: 2;
+    }
+    
+    .banner-buttons {
+        flex-wrap: wrap;
+    }
+    
+    .banner-button {
+        padding: 6px 15px;
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+    
+    .row-title {
+        font-size: 1.2rem;
+    }
+    
+    .row-poster-container {
+        min-width: 100px;
+    }
+    
+    .preview-title {
+        font-size: 20px;
+    }
+    
+    .preview-buttons {
+        flex-wrap: wrap;
+    }
+    
+    .preview-button {
+        padding: 8px 16px;
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+    
+    .footer-link {
+        width: 100%;
+    }
+}
+
+/* Mobile Responsiveness Improvements */
+/* Common fixes for all mobile devices */
+@media screen and (max-width: 767px) {
+    .navbar-container {
+        padding: 0 var(--mobile-padding);
+    }
+    
+    .banner-contents {
+        padding: 70px var(--mobile-padding) 0;
+        width: 100%;
+    }
+    
+    .banner-title {
+        font-size: 2rem;
+        margin-bottom: 10px;
+    }
+    
+    .banner-description {
+        max-width: 100%;
+        font-size: 0.9rem;
+        margin-top: 10px;
+        max-height: 80px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+    }
+    
+    .banner-info {
+        gap: 8px;
+        flex-wrap: wrap;
+        margin: 8px 0;
+    }
+    
+    .row {
+        padding: 10px var(--mobile-padding);
+    }
+    
+    .row-title {
+        font-size: 1.2rem;
+        margin-left: 0;
+    }
+    
+    .row-poster-container {
+        min-width: 120px;
+        margin-right: 8px;
+    }
+    
+    .row-poster {
+        height: 180px;
+        min-width: 120px;
+    }
+    
+    .footer-links {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        padding: 20px var(--mobile-padding);
+    }
+    
+    /* Improved touch targets for better mobile interaction */
+    .row-arrow {
+        width: 30px;
+        height: 30px;
+    }
+    
+    .banner-buttons {
+        margin-top: 15px;
+    }
+    
+    .banner-button {
+        padding: 8px 16px;
+        font-size: 0.9rem;
+    }
+    
+    /* Movie Preview Modal adjustments */
+    .movie-preview {
+        width: 100%;
+        height: 90%;
+        border-radius: 8px 8px 0 0;
+        bottom: 0;
+        top: auto;
+        transform-origin: bottom center;
+    }
+}
+
+/* Small phones like iPhone SE, Galaxy S10e */
+@media screen and (max-width: 374px) {
+    .banner-title {
+        font-size: 1.8rem;
+    }
+    
+    .row-poster-container {
+        min-width: 100px;
+    }
+    
+    .row-poster {
+        height: 150px;
+        min-width: 100px;
+    }
+    
+    .banner-buttons {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+    }
+    
+    .banner-buttons .banner-button {
+        width: 100%;
+    }
+    
+    .nav-profile-img {
+        width: 24px;
+        height: 24px;
+    }
+    
+    .preview-content h3 {
+        font-size: 1.4rem;
+    }
+}
+
+/* Medium phones like iPhone X/11/12, Galaxy S20 */
+@media screen and (min-width: 375px) and (max-width: 413px) {
+    .banner-title {
+        font-size: 2rem;
+    }
+    
+    .row-poster-container {
+        min-width: 110px;
+    }
+    
+    .row-poster {
+        height: 165px;
+        min-width: 110px;
+    }
+    
+    .nav-options {
+        gap: 8px;
+    }
+}
+
+/* Larger phones like iPhone Pro Max, Galaxy Note, etc. */
+@media screen and (min-width: 414px) and (max-width: 480px) {
+    .banner-title {
+        font-size: 2.2rem;
+    }
+    
+    .row-poster-container {
+        min-width: 130px;
+    }
+    
+    .row-poster {
+        height: 195px;
+        min-width: 130px;
+    }
+}
+
+/* Landscape mode optimization */
+@media screen and (max-height: 480px) and (orientation: landscape) {
+    .banner {
+        height: 100vh;
+        min-height: 300px;
+    }
+    
+    .banner-contents {
+        padding: 40px var(--mobile-padding) 0;
+    }
+    
+    .banner-description {
+        max-width: 70%;
+    }
+    
+    .movie-preview {
+        height: 100%;
+        width: 90%;
+        max-width: 800px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(0.9);
+        bottom: auto;
+        border-radius: 8px;
+    }
+    
+    .preview-header {
+        height: 40vh;
+    }
+    
+    /* Improve scrolling in landscape */
+    .banner-description, 
+    .preview-body, 
+    .mobile-menu {
+        overflow-y: auto;
+        scrollbar-width: thin;
+    }
+    
+    .banner-description::-webkit-scrollbar, 
+    .preview-body::-webkit-scrollbar, 
+    .mobile-menu::-webkit-scrollbar {
+        width: 4px;
+    }
+}
+
+/* Notched devices (iPhone X, newer iPhones) */
+@supports (padding-top: env(safe-area-inset-top)) {
+    .navbar {
+        padding-top: max(16px, env(safe-area-inset-top));
+        height: auto;
+    }
+    
+    .mobile-menu {
+        padding-top: max(70px, calc(70px + env(safe-area-inset-top)));
+        padding-bottom: env(safe-area-inset-bottom);
+    }
+    
+    .movie-preview {
+        padding-bottom: env(safe-area-inset-bottom);
+    }
+}
+
+/* High refresh rate animations for modern devices */
+@media (prefers-reduced-motion: no-preference) {
+    .row-poster, 
+    .navbar, 
+    .banner-button,
+    .row-poster-container:hover {
+        transition-duration: 0.2s;
+    }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --netflix-dark: #0f0f0f;
+        --netflix-darker: #000000;
+    }
+}
+
+/* Touch interaction improvements */
+.touch-active {
+    opacity: 0.7 !important;
+    transform: scale(0.98) !important;
+    transition: transform 0.15s ease, opacity 0.15s ease !important;
+}
+
+.mobile-device .row-poster-container:active {
+    transform: scale(0.95);
+}
+
+.mobile-device .banner-button:active, 
+.mobile-device .nav-option:active,
+.mobile-device .preview-button:active {
+    opacity: 0.8;
+    transform: scale(0.98);
+}
+
+/* Use the custom vh variable for elements that need true viewport height */
+.mobile-device .banner {
+    height: calc(var(--vh, 1vh) * 70);
+    min-height: 350px;
+}
+
+.mobile-device .mobile-menu {
+    height: calc(var(--vh, 1vh) * 100);
+}
+
+/* Fix for input focus issues on mobile devices */
+.input-focused .navbar {
+    position: absolute;
+}
+
+/* Better scrolling on iOS */
+.mobile-device {
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Loading indicators for posters on slower networks */
+.row-poster:not(.loaded) {
+    background: linear-gradient(110deg, #141414 8%, #1f1f1f 18%, #141414 33%);
+    background-size: 200% 100%;
+    animation: 1.5s shine linear infinite;
+}
+
+@keyframes shine {
+    to {
+        background-position-x: -200%;
+    }
+} 

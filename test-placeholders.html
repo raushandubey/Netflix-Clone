@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Placeholders</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #141414;
+            color: white;
+        }
+        img {
+            max-width: 100%;
+            display: block;
+            margin: 20px 0;
+            border: 1px solid #555;
+        }
+        h2 {
+            margin-top: 40px;
+            color: #E50914;
+        }
+    </style>
+</head>
+<body>
+    <h1>Placeholder Image Test</h1>
+    
+    <h2>Poster Placeholder</h2>
+    <img src="images/placeholder.svg" alt="Poster Placeholder">
+    <p>If you see the poster placeholder above, it's loading correctly.</p>
+    
+    <h2>Banner Placeholder</h2>
+    <img src="images/banner-placeholder.svg" alt="Banner Placeholder">
+    <p>If you see the banner placeholder above, it's loading correctly.</p>
+    
+    <h2>Results:</h2>
+    <p id="result">Testing...</p>
+    
+    <script>
+        window.onload = function() {
+            const posterPlaceholder = new Image();
+            posterPlaceholder.src = 'images/placeholder.svg';
+            
+            const bannerPlaceholder = new Image();
+            bannerPlaceholder.src = 'images/banner-placeholder.svg';
+            
+            let result = document.getElementById('result');
+            let success = true;
+            
+            posterPlaceholder.onerror = function() {
+                result.innerHTML += "<br>❌ Poster placeholder failed to load";
+                success = false;
+            };
+            
+            posterPlaceholder.onload = function() {
+                result.innerHTML += "<br>✅ Poster placeholder loaded successfully";
+            };
+            
+            bannerPlaceholder.onerror = function() {
+                result.innerHTML += "<br>❌ Banner placeholder failed to load";
+                success = false;
+            };
+            
+            bannerPlaceholder.onload = function() {
+                result.innerHTML += "<br>✅ Banner placeholder loaded successfully";
+            };
+            
+            setTimeout(function() {
+                if (success) {
+                    result.innerHTML += "<br><br><strong>All placeholders loaded correctly. Your paths are working!</strong>";
+                } else {
+                    result.innerHTML += "<br><br><strong>Some placeholders failed to load. Check the paths and file permissions.</strong>";
+                }
+            }, 1000);
+        };
+    </script>
+</body>
+</html> 

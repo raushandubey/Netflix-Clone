@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta http-equiv="Content-Security-Policy" content="img-src * data: blob:; default-src 'self' 'unsafe-inline' 'unsafe-eval';">
+    <title>Netflix</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="https://assets.nflxext.com/us/ffe/siteui/common/icons/nficon2016.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="preload" href="images/placeholder.svg" as="image" type="image/svg+xml">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="logo-container">
+                <a href="#"><img src="https://assets.nflxext.com/ffe/siteui/common/logos/netflix-logo.svg" alt="Netflix Logo" class="logo" onerror="this.onerror=null; this.src='https://upload.wikimedia.org/wikipedia/commons/7/7a/Logonetflix.png'; if(this.src.includes('wikipedia')) this.setAttribute('data-fallback-loaded', 'true');"></a>
+                <div class="nav-links">
+                    <a href="#" class="nav-link active">Home</a>
+                    <a href="#" class="nav-link">TV Shows</a>
+                    <a href="#" class="nav-link">Movies</a>
+                    <a href="#" class="nav-link">New & Popular</a>
+                    <a href="#" class="nav-link">My List</a>
+                    <a href="#" class="nav-link">Browse by Languages</a>
+                </div>
+            </div>
+            
+            <div class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+            
+            <div class="nav-options">
+                <button class="nav-option" aria-label="Search"><i class="fas fa-search"></i></button>
+                <button class="nav-option" aria-label="Notifications"><i class="fas fa-bell"></i></button>
+                <div class="nav-profile">
+                    <img src="images\netflix-icon-2048x2048-wcqfvu3z.png" alt="User Profile" class="nav-profile-img">
+                    <i class="fas fa-caret-down"></i>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile menu -->
+        <div class="mobile-menu">
+            <a href="#" class="mobile-link">Home</a>
+            <a href="#" class="mobile-link">TV Shows</a>
+            <a href="#" class="mobile-link">Movies</a>
+            <a href="#" class="mobile-link">New & Popular</a>
+            <a href="#" class="mobile-link">My List</a>
+            <a href="#" class="mobile-link">Browse by Languages</a>
+            <div class="mobile-options">
+                <button class="mobile-option" aria-label="Search"><i class="fas fa-search"></i></button>
+                <button class="mobile-option" aria-label="Notifications"><i class="fas fa-bell"></i></button>
+                <button class="mobile-option" aria-label="User profile"><i class="fas fa-user"></i></button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Banner -->
+    <header class="banner" id="banner">
+        <div class="banner-contents">
+            <div class="banner-classification">TV-14</div>
+            <h1 class="banner-title">Stranger Things</h1>
+            <div class="banner-info">
+                <span class="banner-match">98% Match</span>
+                <span class="banner-year">2022</span>
+                <span class="banner-seasons">4 Seasons</span>
+                <span class="banner-resolution">HD</span>
+            </div>
+            <p class="banner-description">
+                When a young boy vanishes, a small town uncovers a mystery involving secret experiments, terrifying supernatural forces, and one strange little girl with extraordinary powers.
+            </p>
+            <div class="banner-buttons">
+                <button class="banner-button play-button">
+                    <i class="fas fa-play"></i> Play
+                </button>
+                <button class="banner-button more-info-button">
+                    <i class="fas fa-info-circle"></i> More Info
+                </button>
+            </div>
+        </div>
+        <div class="banner-fadebottom"></div>
+    </header>
+
+    <!-- Content Rows -->
+    <div class="rows-container">
+        <!-- Popular Row -->
+        <section class="row">
+            <h2 class="row-title">Popular on Netflix</h2>
+            <div class="row-posters">
+                <div class="row-poster-container">
+                    <img class="row-poster" src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQjang2tSfHU_olHQ-m_gzuGMDV-h1wMsAsoagx_ho5GW2KksCy" alt="Stranger Things" onerror="this.onerror=null; this.src='images/placeholder.svg'; if(this.src.includes('placeholder.svg')) this.setAttribute('data-fallback-loaded', 'true');">
+                    <div class="row-poster-info">
+                        <div class="row-poster-title">Stranger Things</div>
+                        <span class="row-poster-match">98% Match</span>
+                    </div>
+                </div>
+                <div class="row-poster-container">
+                    <div class="top-ten-badge">TOP 10</div>
+                    <img class="row-poster" src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTNNGFmvY5-pDEUVEDTBrAORhP8GZ85OCNX69Q0ILjY8gRnc_Bq " alt="The Witcher" onerror="this.onerror=null; this.src='images/placeholder.svg'; if(this.src.includes('placeholder.svg')) this.setAttribute('data-fallback-loaded', 'true');">
+                    <div class="row-poster-info">
+                        <div class="row-poster-title">The Witcher</div>
+                        <span class="row-poster-match">96% Match</span>
+                    </div>
+                </div>
+                <div class="row-poster-container">
+                    <img class="row-poster" src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRVT28hbIianT2cWHA_zyg17yzAQRfq5FaSeyG05RU4HdEXJ6yY " alt="Money Heist" onerror="this.onerror=null; this.src='images/placeholder.svg'; if(this.src.includes('placeholder.svg')) this.setAttribute('data-fallback-loaded', 'true');">
+                    <div class="row-poster-info">
+                        <div class="row-poster-title">Money Heist</div>
+                        <span class="row-poster-match">94% Match</span>
+                    </div>
+                </div>
+                <div class="row-poster-container">
+                    <img class="row-poster" src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRRWmvhaeK4muPAAfjrYGGfNa5l334h_bWhasvxSbeGc-QHKkoc " alt="The Queen's Gambit" onerror="this.onerror=null; this.src='images/placeholder.svg'; if(this.src.includes('placeholder.svg')) this.setAttribute('data-fallback-loaded', 'true');">
+                    <div class="row-poster-info">
+                        <div class="row-poster-title">The Queen's Gambit</div>
+                        <span class="row-poster-match">92% Match</span>
+                    </div>
+                </div>
+                <div class="row-poster-container">
+                    <img class="row-poster" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBmR1UfShiKt6vY3J9tjztfpJvB7qM3xIQ_-TUF25_zZYzoTfz " alt="Breaking Bad" onerror="this.onerror=null; this.src='images/placeholder.svg'; if(this.src.includes('placeholder.svg')) this.setAttribute('data-fallback-loaded', 'true');">
+                    <div class="row-poster-info">
+                        <div class="row-poster-title">Breaking Bad</div>
+                        <span class="row-poster-match">95% Match</span>
+                    </div>
+                </div>
+                <div class="row-poster-container">
+                    <img class="row-poster" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQauSsP-Enb9M4LHYGAm62_WjtPA_pgviPr0HnSKs7bhUJo9_bh " alt="The Crown" onerror="this.onerror=null; this.src='images/placeholder.svg'; if(this.src.includes('placeholder.svg')) this.setAttribute('data-fallback-loaded', 'true');">
+                    <div class="row-poster-info">
+                        <div class="row-poster-title">The Crown</div>
+                        <span class="row-poster-match">89% Match</span>
+                    </div>
+                </div>
+                <div class="row-poster-container">
+                    <img class="row-poster" src=" https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTnPXL0OklxeuT6B2J1jLwJX9Uhczxwa0SX27UiE6cj0GDFq0zO" alt="Dark" onerror="this.onerror=null; this.src='images/placeholder.svg'; if(this.src.includes('placeholder.svg')) this.setAttribute('data-fallback-loaded', 'true');">
+                    <div class="row-poster-info">
+                        <div class="row-poster-title">Dark</div>
+                        <span class="row-poster-match">91% Match</span>
+                    </div>
+                </div>
+                <div class="row-poster-container">
+                    <img class="row-poster" src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcT3h5hP9hpngPsXeom2Curz3fc9u2lQInaZERtwVe9RcMI9g3ta " alt="Ozark" onerror="this.onerror=null; this.src='images/placeholder.svg'; if(this.src.includes('placeholder.svg')) this.setAttribute('data-fallback-loaded', 'true');">
+                    <div class="row-poster-info">
+                        <div class="row-poster-title">Ozark</div>
+                        <span class="row-poster-match">93% Match</span>
+                    </div>
+                </div>
+            </div>
+            <div class="row-arrow left-arrow"><i class="fas fa-chevron-left"></i></div>
+            <div class="row-arrow right-arrow"><i class="fas fa-chevron-right"></i></div>
+        </section>
+
+        <!-- Trending Row -->
+        <section class="row">
+            <h2 class="row-title">Trending Now</h2>
+            <div class="row-posters">
+                <div class="row-poster-container">
+                    <div class="top-ten-badge">TOP 1</div>
+                    <img class="row-poster" src=" https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRtMsLxGCVxmmql_aW_5XGGPDbGkC-63TGO1AFXDGEkDhrkVt1L" alt="Squid Game" onerror="this.onerror=null; this.src='images/placeholder.svg'; if(this.src.includes('placeholder.svg')) this.setAttribute('data-fallback-loaded', 'true');">
+                    <div class="row-poster-info">
+                        <div class="row-poster-title">Squid Game</div>
+                        <span class="row-poster-match">97% Match</span>
+                    </div>
+                </div>
+                <div class="row-poster-container">
+                    <img class="row-poster" src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQmh7udlDdVsRWs2Jc8yU4zcpLjnbqCrGJham3-H-Lt2PIHabmx " alt="Bridgerton" onerror="this.onerror=null; this.src='images/placeholder.svg'; if(this.src.includes('placeholder.svg')) this.setAttribute('data-fallback-loaded', 'true');">
+                    <div class="row-poster-info">
+                        <div class="row-poster-title">Bridgerton</div>
+                        <span class="row-poster-match">90% Match</span>
+                    </div>
+                </div>
+                <div class="row-poster-container">
+                    <img class="row-poster" src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcT8g9WUHkEHrmqtgEstpCNpdAvxSM2R_gsCh-6-6m6EfvS4UnRk " alt="Lupin" onerror="this.onerror=null; this.src='images/placeholder.svg'; if(this.src.includes('placeholder.svg')) this.setAttribute('data-fallback-loaded', 'true');">
+                    <div class="row-poster-info">
+                        <div class="row-poster-title">Lupin</div>
+                        <span class="row-poster-match">89% Match</span>
+                    </div>
+                </div>
+                <div class="row-poster-container">
+                    <img class="row-poster" src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQK2CLNYvsMGoWfQG7i10TUSyscRyRMvKIRoBBxHDLhtLxyP0l9 " alt="The Last Kingdom" onerror="this.onerror=null; this.src='images/placeholder.svg'; if(this.src.includes('placeholder.svg')) this.setAttribute('data-fallback-loaded', 'true');">
+                    <div class="row-poster-info">
+                        <div class="row-poster-title">The Last Kingdom</div>
+                        <span class="row-poster-match">92% Match</span>
+                    </div>
+                </div>
+                <div class="row-poster-container">
+                    <img class="row-poster" src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRSd6R59-rwEgp8w0fOWYj_U0yTVyxjOcfKOWILcvmRgedSuuo6 " alt="Emily in Paris" onerror="this.onerror=null; this.src='images/placeholder.svg'; if(this.src.includes('placeholder.svg')) this.setAttribute('data-fallback-loaded', 'true');">
+                    <div class="row-poster-info">
+                        <div class="row-poster-title">Emily in Paris</div>
+                        <span class="row-poster-match">85% Match</span>
+                    </div>
+                </div>
+                <div class="row-poster-container">
+                    <img class="row-poster" src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRqU1a4Msql_m3kozpM4QaNnAw5bP9eX7vVGmiPm5gy5715_apf " alt="The Umbrella Academy" onerror="this.onerror=null; this.src='images/placeholder.svg'; if(this.src.includes('placeholder.svg')) this.setAttribute('data-fallback-loaded', 'true');">
+                    <div class="row-poster-info">
+                        <div class="row-poster-title">The Umbrella Academy</div>
+                        <span class="row-poster-match">93% Match</span>
+                    </div>
+                </div>
+                <div class="row-poster-container">
+                    <img class="row-poster" src=" https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRTRrpmgt-2UV_0PfO3gAPM72CC7wDc3QtMjU7I_qDCFA0S_Tqd" alt="You" onerror="this.onerror=null; this.src='images/placeholder.svg'; if(this.src.includes('placeholder.svg')) this.setAttribute('data-fallback-loaded', 'true');">
+                    <div class="row-poster-info">
+                        <div class="row-poster-title">You</div>
+                        <span class="row-poster-match">88% Match</span>
+                    </div>
+                </div>
+                <div class="row-poster-container">
+                    <img class="row-poster" src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQPtxG528LmbTcOzhOCr38FuOvzdKFd5OBDmfL3ugaMhNfNGjI5 " alt="Cobra Kai" onerror="this.onerror=null; this.src='images/placeholder.svg'; if(this.src.includes('placeholder.svg')) this.setAttribute('data-fallback-loaded', 'true');">
+                    <div class="row-poster-info">
+                        <div class="row-poster-title">Cobra Kai</div>
+                        <span class="row-poster-match">91% Match</span>
+                    </div>
+                </div>
+            </div>
+            <div class="row-arrow left-arrow"><i class="fas fa-chevron-left"></i></div>
+            <div class="row-arrow right-arrow"><i class="fas fa-chevron-right"></i></div>
+        </section>
+
+        <!-- Top Rated Row -->
+        <section class="row">
+            <h2 class="row-title">Top Rated</h2>
+            <div class="row-posters">
+                <div class="row-poster-container">
+                    <img class="row-poster" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQauSsP-Enb9M4LHYGAm62_WjtPA_pgviPr0HnSKs7bhUJo9_bh " alt="The Crown" onerror="this.onerror=null; this.src='images/placeholder.svg'; if(this.src.includes('placeholder.svg')) this.setAttribute('data-fallback-loaded', 'true');">
+                    <div class="row-poster-info">
+                        <div class="row-poster-title">The Crown</div>
+                        <span class="row-poster-match">89% Match</span>
+                    </div>
+                </div>
+                <div class="row-poster-container">
+                    <img class="row-poster" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwGQYa5x5KeA9X3ZWpdAmmCCm0Kh2g5q2mOazyvKuzpib_QJ-a " alt="Black Mirror" onerror="this.onerror=null; this.src='images/placeholder.svg'; if(this.src.includes('placeholder.svg')) this.setAttribute('data-fallback-loaded', 'true');">
+                    <div class="row-poster-info">
+                        <div class="row-poster-title">Black Mirror</div>
+                        <span class="row-poster-match">94% Match</span>
+                    </div>
+                </div>
+                <div class="row-poster-container">
+                    <img class="row-poster" src=" https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQlXYTWdFgKPpuRtDYwLWWFmIk8RyoMj7wxNrB9wygwvOhkp3xx" alt="Peaky Blinders" onerror="this.onerror=null; this.src='images/placeholder.svg'; if(this.src.includes('placeholder.svg')) this.setAttribute('data-fallback-loaded', 'true');">
+                    <div class="row-poster-info">
+                        <div class="row-poster-title">Peaky Blinders</div>
+                        <span class="row-poster-match">96% Match</span>
+                    </div>
+                </div>
+                <div class="row-poster-container">
+                    <img class="row-poster" src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTG3TEEIpvFTY3C_vry9OmMmOT2r5-CthMXd21Uyc_0uBj_S-Hi " alt="Better Call Saul" onerror="this.onerror=null; this.src='images/placeholder.svg'; if(this.src.includes('placeholder.svg')) this.setAttribute('data-fallback-loaded', 'true');">
+                    <div class="row-poster-info">
+                        <div class="row-poster-title">Better Call Saul</div>
+                        <span class="row-poster-match">92% Match</span>
+                    </div>
+                </div>
+                <div class="row-poster-container">
+                    <img class="row-poster" src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTg-iPdV2PDh9KeCTZVPI8pHrwsaKkshXSJv4SKCpT9p9ATFsLW " alt="Daredevil" onerror="this.onerror=null; this.src='images/placeholder.svg'; if(this.src.includes('placeholder.svg')) this.setAttribute('data-fallback-loaded', 'true');">
+                    <div class="row-poster-info">
+                        <div class="row-poster-title">Daredevil</div>
+                        <span class="row-poster-match">90% Match</span>
+                    </div>
+                </div>
+                <div class="row-poster-container">
+                    <img class="row-poster" src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQncEjmdGsGFFmmt3P1qxoYjLO6RuCKbt6dcBJmmw9baKFYMzDL " alt="Mindhunter" onerror="this.onerror=null; this.src='images/placeholder.svg'; if(this.src.includes('placeholder.svg')) this.setAttribute('data-fallback-loaded', 'true');">
+                    <div class="row-poster-info">
+                        <div class="row-poster-title">Mindhunter</div>
+                        <span class="row-poster-match">93% Match</span>
+                    </div>
+                </div>
+                <div class="row-poster-container">
+                    <img class="row-poster" src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSFXmE6cRQjMvHbAHU2HALzpQR7wVo48gzyrG6OWY5Si2tM3Qc1 " alt="Sherlock" onerror="this.onerror=null; this.src='images/placeholder.svg'; if(this.src.includes('placeholder.svg')) this.setAttribute('data-fallback-loaded', 'true');">
+                    <div class="row-poster-info">
+                        <div class="row-poster-title">Sherlock</div>
+                        <span class="row-poster-match">89% Match</span>
+                    </div>
+                </div>
+                <div class="row-poster-container">
+                    <img class="row-poster" src=" images\MV5BMGU0MDIzZTAtYjBjZi00ZDQ1LThlYzctNWJkOWU4NTI5OWNkXkEyXkFqcGc@._V1_.jpg" alt="When They See Us" onerror="this.onerror=null; this.src='images/placeholder.svg'; if(this.src.includes('placeholder.svg')) this.setAttribute('data-fallback-loaded', 'true');">
+                    <div class="row-poster-info">
+                        <div class="row-poster-title">When They See Us</div>
+                        <span class="row-poster-match">95% Match</span>
+                    </div>
+                </div>
+            </div>
+            <div class="row-arrow left-arrow"><i class="fas fa-chevron-left"></i></div>
+            <div class="row-arrow right-arrow"><i class="fas fa-chevron-right"></i></div>
+        </section>
+    </div>
+
+    <!-- Movie Preview Modal -->
+    <div class="overlay" id="overlay"></div>
+    <div class="movie-preview" id="movie-preview">
+        <div class="preview-header">
+            <div class="preview-close"><i class="fas fa-times"></i></div>
+            <div class="preview-content">
+                <h3 class="preview-title">Stranger Things</h3>
+                <div class="preview-info">
+                    <span class="preview-match">98% Match</span>
+                    <span class="preview-year">2022</span>
+                    <span class="preview-duration">4 Seasons</span>
+                    <span class="preview-rating">TV-14</span>
+                </div>
+                <p class="preview-description">When a young boy vanishes, a small town uncovers a mystery involving secret experiments, terrifying supernatural forces, and one strange little girl with extraordinary powers.</p>
+                <div class="preview-buttons">
+                    <button class="preview-button preview-play">
+                        <i class="fas fa-play"></i> Play
+                    </button>
+                    <button class="preview-button preview-add">
+                        <i class="fas fa-plus"></i> My List
+                    </button>
+                    <button class="preview-button preview-like" aria-label="Like">
+                        <i class="fas fa-thumbs-up"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="preview-body">
+            <div class="preview-cast">
+                <h4 class="preview-cast-title">Cast</h4>
+                <p class="preview-cast-list">Millie Bobby Brown, Finn Wolfhard, Caleb McLaughlin, Noah Schnapp, Gaten Matarazzo, Sadie Sink, Joe Keery, Natalia Dyer</p>
+            </div>
+            <div class="preview-genres">
+                <h4 class="preview-genres-title">Genres</h4>
+                <div class="preview-genres-list">
+                    <span class="preview-genre">Sci-Fi TV</span>
+                    <span class="preview-genre">Teen TV Shows</span>
+                    <span class="preview-genre">Horror</span>
+                    <span class="preview-genre">Mystery</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-links">
+            <a href="#" class="footer-link">Audio Description</a>
+            <a href="#" class="footer-link">Help Center</a>
+            <a href="#" class="footer-link">Gift Cards</a>
+            <a href="#" class="footer-link">Media Center</a>
+            <a href="#" class="footer-link">Investor Relations</a>
+            <a href="#" class="footer-link">Jobs</a>
+            <a href="#" class="footer-link">Terms of Use</a>
+            <a href="#" class="footer-link">Privacy</a>
+            <a href="#" class="footer-link">Legal Notices</a>
+            <a href="#" class="footer-link">Cookie Preferences</a>
+            <a href="#" class="footer-link">Corporate Information</a>
+            <a href="#" class="footer-link">Contact Us</a>
+        </div>
+        <div class="footer-copyright">
+            © 2023 Netflix Clone. This is not the real Netflix. Created for educational purposes only.
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        function checkConnectivity() {
+            if (!navigator.onLine) {
+                document.body.classList.add('offline-mode');
+                console.warn('Working in offline mode - using placeholders');
+            }
+        }
+
+        // Run connectivity check when page loads
+        document.addEventListener('DOMContentLoaded', checkConnectivity);
+
+        // If both external and local images fail
+        function createInlineSVG() {
+            return `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="200" height="300">
+                <rect width="100%" height="100%" fill="#141414"/>
+                <text x="100" y="150" font-family="Arial" fill="white" text-anchor="middle">Netflix</text>
+            </svg>`;
+        }
+
+        // Pre-verify that placeholders exist
+        function verifyPlaceholders() {
+            const placeholderCheck = new Image();
+            placeholderCheck.src = 'images/placeholder.svg';
+            
+            placeholderCheck.onerror = function() {
+                console.error('Placeholder image not found at "images/placeholder.svg" - creating fallback');
+                
+                // Create a dynamic fallback if the placeholder itself is missing
+                const dynamicPlaceholder = document.createElement('div');
+                dynamicPlaceholder.style.cssText = 'position:fixed;top:0;left:0;opacity:0;';
+                dynamicPlaceholder.innerHTML = `<img src="${createInlineSVG()}" alt="Fallback">`;
+                document.body.appendChild(dynamicPlaceholder);
+            };
+        }
+
+        // Run verification when page loads
+        verifyPlaceholders();
+    </script>
+</body>
+</html> 
