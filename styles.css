@@ -10,13 +10,35 @@
     --netflix-shadow: rgba(0, 0, 0, 0.75);
     --netflix-gradient: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0, rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 0.8) 100%);
     --hover-transition: all 0.3s ease;
+    
+    /* Mobile-specific variables */
     --mobile-padding: 10px;
-    --small-mobile-width: 320px;
-    --medium-mobile-width: 375px;
-    --large-mobile-width: 414px;
-    --iphone-pro-max: 428px;
-    --android-large: 480px;
-    --tablet-width: 768px;
+    --mobile-header-height: 68px;
+    --mobile-touch-target: 44px;
+    --mobile-border-radius: 4px;
+    
+    /* Mobile breakpoints */
+    --small-mobile-width: 320px;    /* iPhone SE, small Android */
+    --medium-mobile-width: 375px;   /* iPhone X/11/12 */
+    --large-mobile-width: 414px;    /* iPhone XR/11 Pro Max */
+    --iphone-pro-max: 428px;        /* iPhone 12/13 Pro Max */
+    --android-large: 480px;         /* Large Android phones */
+    --tablet-width: 768px;          /* Tablets */
+    
+    /* Mobile-specific spacing */
+    --mobile-spacing-xs: 4px;
+    --mobile-spacing-sm: 8px;
+    --mobile-spacing-md: 12px;
+    --mobile-spacing-lg: 16px;
+    --mobile-spacing-xl: 24px;
+    
+    /* Mobile-specific font sizes */
+    --mobile-font-xs: 12px;
+    --mobile-font-sm: 14px;
+    --mobile-font-md: 16px;
+    --mobile-font-lg: 18px;
+    --mobile-font-xl: 20px;
+    --mobile-font-xxl: 24px;
 }
 
 /* CSS Reset */
@@ -968,93 +990,154 @@ body {
 /* Mobile Responsiveness Improvements */
 /* Common fixes for all mobile devices */
 @media screen and (max-width: 767px) {
+    /* Improved touch targets */
+    .nav-option,
+    .mobile-option,
+    .banner-button,
+    .preview-button {
+        min-height: var(--mobile-touch-target);
+        min-width: var(--mobile-touch-target);
+        padding: var(--mobile-spacing-sm);
+    }
+    
+    /* Better spacing for mobile elements */
     .navbar-container {
         padding: 0 var(--mobile-padding);
+        height: var(--mobile-header-height);
+    }
+    
+    .mobile-menu {
+        padding: var(--mobile-spacing-lg) var(--mobile-padding);
+    }
+    
+    .mobile-link {
+        padding: var(--mobile-spacing-md) var(--mobile-padding);
+        font-size: var(--mobile-font-md);
+        min-height: var(--mobile-touch-target);
+        display: flex;
+        align-items: center;
+    }
+    
+    /* Improved banner for mobile */
+    .banner {
+        height: calc(var(--vh, 1vh) * 70);
+        min-height: 350px;
+        padding-top: var(--mobile-header-height);
     }
     
     .banner-contents {
-        padding: 70px var(--mobile-padding) 0;
+        padding: var(--mobile-spacing-xl) var(--mobile-padding);
         width: 100%;
+        max-width: 100%;
+        bottom: 15%;
     }
     
     .banner-title {
-        font-size: 2rem;
-        margin-bottom: 10px;
+        font-size: var(--mobile-font-xxl);
+        margin-bottom: var(--mobile-spacing-md);
     }
     
     .banner-description {
-        max-width: 100%;
-        font-size: 0.9rem;
-        margin-top: 10px;
-        max-height: 80px;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        display: -webkit-box;
+        font-size: var(--mobile-font-sm);
+        margin: var(--mobile-spacing-md) 0;
         -webkit-line-clamp: 3;
-        -webkit-box-orient: vertical;
     }
     
-    .banner-info {
-        gap: 8px;
-        flex-wrap: wrap;
-        margin: 8px 0;
-    }
-    
+    /* Improved row posters for mobile */
     .row {
-        padding: 10px var(--mobile-padding);
+        margin: var(--mobile-spacing-lg) 0;
+        padding: 0 var(--mobile-padding);
     }
     
     .row-title {
-        font-size: 1.2rem;
-        margin-left: 0;
+        font-size: var(--mobile-font-lg);
+        margin-bottom: var(--mobile-spacing-md);
     }
     
     .row-poster-container {
         min-width: 120px;
-        margin-right: 8px;
+        margin-right: var(--mobile-spacing-sm);
     }
     
     .row-poster {
         height: 180px;
         min-width: 120px;
+        border-radius: var(--mobile-border-radius);
     }
     
-    .footer-links {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 10px;
-        padding: 20px var(--mobile-padding);
-    }
-    
-    /* Improved touch targets for better mobile interaction */
-    .row-arrow {
-        width: 30px;
-        height: 30px;
-    }
-    
-    .banner-buttons {
-        margin-top: 15px;
-    }
-    
-    .banner-button {
-        padding: 8px 16px;
-        font-size: 0.9rem;
-    }
-    
-    /* Movie Preview Modal adjustments */
+    /* Improved preview modal for mobile */
     .movie-preview {
         width: 100%;
         height: 90%;
-        border-radius: 8px 8px 0 0;
+        border-radius: var(--mobile-border-radius) var(--mobile-border-radius) 0 0;
         bottom: 0;
         top: auto;
         transform-origin: bottom center;
     }
+    
+    .preview-header {
+        height: 40vh;
+    }
+    
+    .preview-content {
+        padding: var(--mobile-spacing-lg);
+    }
+    
+    .preview-title {
+        font-size: var(--mobile-font-xl);
+        margin-bottom: var(--mobile-spacing-sm);
+    }
+    
+    .preview-description {
+        font-size: var(--mobile-font-sm);
+        margin: var(--mobile-spacing-md) 0;
+    }
+    
+    /* Improved footer for mobile */
+    .footer {
+        padding: var(--mobile-spacing-xl) var(--mobile-padding);
+    }
+    
+    .footer-links {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--mobile-spacing-md);
+    }
+    
+    .footer-link {
+        font-size: var(--mobile-font-sm);
+        padding: var(--mobile-spacing-sm) 0;
+    }
+    
+    /* Improved scrolling experience */
+    .row-posters {
+        -webkit-overflow-scrolling: touch;
+        scroll-snap-type: x mandatory;
+    }
+    
+    .row-poster-container {
+        scroll-snap-align: start;
+    }
+    
+    /* Better touch feedback */
+    .touch-active {
+        opacity: 0.7;
+        transform: scale(0.98);
+        transition: transform 0.15s ease, opacity 0.15s ease;
+    }
+    
+    /* Loading state improvements */
+    .row-poster:not(.loaded) {
+        background: linear-gradient(110deg, var(--netflix-dark) 8%, var(--netflix-dark-lighter) 18%, var(--netflix-dark) 33%);
+        background-size: 200% 100%;
+        animation: 1.5s shine linear infinite;
+    }
 }
 
-/* Small phones like iPhone SE, Galaxy S10e */
+/* Small phones (iPhone SE, small Android) */
 @media screen and (max-width: 374px) {
     .banner-title {
-        font-size: 1.8rem;
+        font-size: var(--mobile-font-xl);
     }
     
     .row-poster-container {
@@ -1068,28 +1151,24 @@ body {
     
     .banner-buttons {
         flex-direction: column;
-        align-items: stretch;
-        gap: 10px;
+        gap: var(--mobile-spacing-sm);
     }
     
-    .banner-buttons .banner-button {
+    .banner-button {
         width: 100%;
+        justify-content: center;
     }
     
     .nav-profile-img {
         width: 24px;
         height: 24px;
     }
-    
-    .preview-content h3 {
-        font-size: 1.4rem;
-    }
 }
 
-/* Medium phones like iPhone X/11/12, Galaxy S20 */
+/* Medium phones (iPhone X/11/12, Galaxy S20) */
 @media screen and (min-width: 375px) and (max-width: 413px) {
     .banner-title {
-        font-size: 2rem;
+        font-size: calc(var(--mobile-font-xxl) * 0.9);
     }
     
     .row-poster-container {
@@ -1102,14 +1181,14 @@ body {
     }
     
     .nav-options {
-        gap: 8px;
+        gap: var(--mobile-spacing-sm);
     }
 }
 
-/* Larger phones like iPhone Pro Max, Galaxy Note, etc. */
+/* Large phones (iPhone Pro Max, Galaxy Note) */
 @media screen and (min-width: 414px) and (max-width: 480px) {
     .banner-title {
-        font-size: 2.2rem;
+        font-size: var(--mobile-font-xxl);
     }
     
     .row-poster-container {
@@ -1130,7 +1209,7 @@ body {
     }
     
     .banner-contents {
-        padding: 40px var(--mobile-padding) 0;
+        padding: var(--mobile-spacing-lg) var(--mobile-padding);
     }
     
     .banner-description {
@@ -1145,14 +1224,14 @@ body {
         left: 50%;
         transform: translate(-50%, -50%) scale(0.9);
         bottom: auto;
-        border-radius: 8px;
+        border-radius: var(--mobile-border-radius);
     }
     
     .preview-header {
         height: 40vh;
     }
     
-    /* Improve scrolling in landscape */
+    /* Improved scrolling in landscape */
     .banner-description, 
     .preview-body, 
     .mobile-menu {
@@ -1167,10 +1246,10 @@ body {
     }
 }
 
-/* Notched devices (iPhone X, newer iPhones) */
+/* Notched devices support */
 @supports (padding-top: env(safe-area-inset-top)) {
     .navbar {
-        padding-top: max(16px, env(safe-area-inset-top));
+        padding-top: max(var(--mobile-spacing-lg), env(safe-area-inset-top));
         height: auto;
     }
     
@@ -1184,7 +1263,7 @@ body {
     }
 }
 
-/* High refresh rate animations for modern devices */
+/* High refresh rate support */
 @media (prefers-reduced-motion: no-preference) {
     .row-poster, 
     .navbar, 
