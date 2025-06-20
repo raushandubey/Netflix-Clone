@@ -79,7 +79,7 @@ This project is for educational purposes only. This is not the official Netflix 
 ## License
 
 [MIT License](LICENSE)
-
+Designed and developed by Raushan Dubey
 ---
 
 Made with ❤️ by [Raushan Dubey] 
